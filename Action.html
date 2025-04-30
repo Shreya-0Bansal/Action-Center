@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Center</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="Action.css" rel="stylesheet">
+</head>
+<body>
+        <div class="container">
+            <div class="header">
+                <div class="menu-icon"><i class="fas fa-bars"></i></div>
+                <div class="title">Action Center</div>
+                <div class="filter-icon"><i class="fas fa-sliders-h"></i></div>
+                <div class="filter-icon"><i class="far fa-bell"></i>  </div>             
+            </div>
+            
+            <div class="filter-modal" id="filterModal">
+                <div class="filter-content">
+                    <label>Assignee</label>
+                    <select>
+                        <option>Assignee1</option>
+                        <option>Assignee2</option>
+                    </select>
+            
+                    <label>Status</label>
+                    <select>
+                        <option>All</option>
+                        <option>Open</option>
+                        <option>In Progress</option>
+                        <option>Completed</option>
+                    </select>
+            
+                    <label>Due date</label>
+                    <input type="date" />
+            
+                    <button class="apply-btn">Apply</button>
+                    <button class="reset-btn">Reset to Defaults</button>
+                </div>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active-tab">Active actions</div>
+                <div class="tab inactive-tab">Active plans</div>
+            </div>
+            
+            <div class="stats">
+                <div class="stats-label">Total active actions</div>
+                <div class="stats-number">26</div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active-btn">Open (10)</button>
+                    <button class="filter-btn inactive-btn">In progress (16)</button>
+                    <button class="filter-btn inactive-btn">Completed(10+)</button>
+                </div>
+            </div>
+            
+            <div class="task-card">
+                <div class="card-header">
+                    <div class="card-type">Service load</div>
+                    <div class="creation-date">Created on: 21/04/25</div>
+                </div>
+            
+                <div class="title-row">
+                    <div class="title-section">
+                        <div class="section-label">Title</div>
+                        <div class="card-title">Improve Service Load Performance</div>
+                    </div>
+                    <div class="doc-info">
+                        <i class="fas fa-paperclip doc-icon"></i>
+                        <div class="doc-name">Doc.pdf</div>
+                    </div>
+                </div>
+            
+                <div class="description-section">
+                    <div class="section-label">Description</div>
+                    <div class="card-description">Growth of <strong>5%</strong> on the current performance</div>
+                </div>
+            
+                <div class="card-footer">
+                    <div class="assigned-section">
+                        <div class="assigned-label">Assigned to</div>
+                        <div class="assigned-name">Rakesh sharma</div>
+                    </div>
+                    <div class="due-date-section">
+                        <div class="due-date-label">Target completion date</div>
+                        <div class="due-date">30/04/25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="task-card">
+                <div class="card-header">
+                    <div class="card-type">Service load</div>
+                    <div class="creation-date">Created on: 21/04/25</div>
+                </div>
+            
+                <div class="title-row">
+                    <div class="title-section">
+                        <div class="section-label">Title</div>
+                        <div class="card-title">Improve Service Load Performance</div>
+                    </div>
+                    <div class="doc-info">
+                        <i class="fas fa-paperclip doc-icon"></i>
+                        <div class="doc-name">Doc.pdf</div>
+                    </div>
+                </div>
+            
+                <div class="description-section">
+                    <div class="section-label">Description</div>
+                    <div class="card-description">Growth of <strong>5%</strong> on the current performance</div>
+                </div>
+            
+                <div class="card-footer">
+                    <div class="assigned-section">
+                        <div class="assigned-label">Assigned to</div>
+                        <div class="assigned-name">Rakesh sharma</div>
+                    </div>
+                    <div class="due-date-section">
+                        <div class="due-date-label">Target completion date</div>
+                        <div class="due-date">30/04/25</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="task-card">
+                <div class="card-header">
+                    <div class="card-type">Service load</div>
+                    <div class="creation-date">Created on: 21/04/25</div>
+                </div>
+            
+                <div class="title-row">
+                    <div class="title-section">
+                        <div class="section-label">Title</div>
+                        <div class="card-title">Improve Service Load Performance</div>
+                    </div>
+                    <div class="doc-info">
+                        <i class="fas fa-paperclip doc-icon"></i>
+                        <div class="doc-name">Doc.pdf</div>
+                    </div>
+                </div>
+            
+                <div class="description-section">
+                    <div class="section-label">Description</div>
+                    <div class="card-description">Growth of <strong>5%</strong> on the current performance</div>
+                </div>
+            
+                <div class="card-footer">
+                    <div class="assigned-section">
+                        <div class="assigned-label">Assigned to</div>
+                        <div class="assigned-name">Rakesh sharma</div>
+                    </div>
+                    <div class="due-date-section">
+                        <div class="due-date-label">Target completion date</div>
+                        <div class="due-date">30/04/25</div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const buttons = document.querySelectorAll(".filter-btn");
+                    const cards = document.querySelectorAll(".task-card");
+                
+                    buttons.forEach((btn, index) => {
+                        btn.addEventListener("click", () => {
+                            // Toggle active button
+                            buttons.forEach(b => b.classList.remove("active-btn"));
+                            btn.classList.add("active-btn");
+                
+                            // Update card styles
+                            cards.forEach(card => {
+                                card.classList.remove("in-progress", "completed");
+                
+                                if (index === 1) {
+                                    card.classList.add("in-progress");
+                                } else if (index === 2) {
+                                    card.classList.add("completed");
+                                }
+                            });
+                        });
+                    });
+                });
+
+                // Modal
+document.addEventListener("DOMContentLoaded", () => {
+    const filterIcon = document.querySelector(".fa-sliders-h");
+    const filterModal = document.getElementById("filterModal");
+    const applyBtn = document.querySelector(".apply-btn");
+
+    filterIcon.addEventListener("click", () => {
+        const isVisible = filterModal.style.display === "block";
+        filterModal.style.display = isVisible ? "none" : "block";
+    });
+
+    applyBtn.addEventListener("click", () => {
+        filterModal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+        if (!filterModal.contains(e.target) && !filterIcon.contains(e.target)) {
+            filterModal.style.display = "none";
+        }
+    });
+});
+                </script>
+                
+        </div>
+</body>
+</html>

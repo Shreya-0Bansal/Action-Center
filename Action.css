@@ -76,16 +76,24 @@ body {
     padding: 16px;
 }
 
+.stats-box {
+    background-color: #dfebf2;
+    border-radius: 8px;
+}
+  
 .stats-label {
     font-size: 14px;
     color: #333;
+    font-weight: 500;
     margin-bottom: 4px;
+    margin-left: 7px;
 }
 
 .stats-number {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 16px;
+    margin-left: 7px;
 }
 
 .filter-buttons {
